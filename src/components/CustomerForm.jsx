@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function CustomerForm() {
   const [customer, setCustomer] = useState({ name: "", age: "", phone: "" });
-
+  useEffect(() => {
+    console.log('Component rendered!');
+  }, [customer]);
   return (
     <>
       <input

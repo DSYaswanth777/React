@@ -8,14 +8,19 @@ import ScoreCard from "./components/ScoreCard";
 import Hooks from "./components/Hooks";
 import Toogle from "./components/Toogle";
 import CustomerForm from "./components/CustomerForm";
+import UsersList from "./components/usersList";
+import Timer from "./components/Timer";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <Toogle/>
-<CustomerForm/>
+     {/* <CustomerForm/> */}
+      {/* <Toogle/>
+// <CustomerForm/> */}
+<UsersList/>
+{/* <Timer/> */}
       {/* <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
