@@ -10,17 +10,22 @@ import Toogle from "./components/Toogle";
 import CustomerForm from "./components/CustomerForm";
 import UsersList from "./components/usersList";
 import Timer from "./components/Timer";
+import { Route, Routes } from "react-router-dom";
+import Nvabar from "./components/Nvabar";
+import UserDetail from "./components/UserDetail";
+import LoginForm from "./components/LoginForm";
+import NotFound from "./components/NotFound";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-     {/* <CustomerForm/> */}
+      {/* <CustomerForm/> */}
       {/* <Toogle/>
 // <CustomerForm/> */}
-<UsersList/>
-{/* <Timer/> */}
+      {/* <UsersList /> */}
+      {/* <Timer/> */}
       {/* <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
@@ -159,6 +164,15 @@ Lower Case firstmember
 
       {/* <Hooks/> */}
 
+      <Nvabar />
+      <Routes>
+        <Route path="/" element={<UsersList />} />
+        <Route path="/greeting" element={<Greeting />} />
+        <Route path="users/:id" element={<UserDetail />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="*" element={<NotFound />} />
+
+      </Routes>
     </>
   );
 }

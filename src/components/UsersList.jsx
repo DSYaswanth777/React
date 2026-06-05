@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function UsersList() {
   const [users, setUsers] = useState([]);
@@ -8,9 +9,13 @@ function UsersList() {
       res.json().then((data) => setUsers(data))
     );
   }, []);
+
+
+
+  
   return <>
-  <ul>
-    {users.map(user => <li key={user.id} className="fs-3"> {user.name} </li>)}
+  <ul className="d-flex flex-column">
+    {users.map(user => <Link to={`users/${user.id}`} key={user.id} className="fs-3"> {user.name} </Link>)}
   </ul>
   <h2>Life cycle of react component</h2>
 Mount - the component is created and inserted into the DOM for the first time. This where you fetch the intial data, start timers, set up sub
