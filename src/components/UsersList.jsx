@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ThemeContext from "../Context/ThemeContext";
 
 function UsersList() {
   const [users, setUsers] = useState([]);
-
+  const theme = useContext(ThemeContext);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users").then((res) =>
       res.json().then((data) => setUsers(data))
@@ -17,7 +18,7 @@ function UsersList() {
   <ul className="d-flex flex-column">
     {users.map(user => <Link to={`users/${user.id}`} key={user.id} className="fs-3"> {user.name} </Link>)}
   </ul>
-  <h2>Life cycle of react component</h2>
+  {/* <h2>Life cycle of react component</h2>
 Mount - the component is created and inserted into the DOM for the first time. This where you fetch the intial data, start timers, set up sub
 Update - something is changes state or props got an new value, React rerendders the component to reflect that change
 Unmount - the component is removed from DOM. this is where you clean up - clear timers, cancels requests, remove event listeners
@@ -27,10 +28,10 @@ Unmount - the component is removed from DOM. this is where you clean up - clear 
 
 
 Update
-Unmount
+Unmount */}
 
 
-
+<p >Current Theme color {theme}</p>
   </>;
 }
 

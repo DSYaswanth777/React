@@ -15,9 +15,13 @@ import Nvabar from "./components/Nvabar";
 import UserDetail from "./components/UserDetail";
 import LoginForm from "./components/LoginForm";
 import NotFound from "./components/NotFound";
+import SerarchBox from "./components/SerarchBox";
+import RenderCounter from "./components/RenderCounter";
+import ThemeContext from "./Context/ThemeContext";
 
 function App() {
   const [count, setCount] = useState(0);
+const [theme,setTheme] = useState('light')
 
   return (
     <>
@@ -163,6 +167,8 @@ Lower Case firstmember
       <ScoreCard /> */}
 
       {/* <Hooks/> */}
+<ThemeContext.Provider value={theme} >
+
 
       <Nvabar />
       <Routes>
@@ -170,9 +176,14 @@ Lower Case firstmember
         <Route path="/greeting" element={<Greeting />} />
         <Route path="users/:id" element={<UserDetail />} />
         <Route path="/login" element={<LoginForm />} />
+        <Route path="/useref" element={<SerarchBox />} />
+        <Route path="/render-counter" element={<RenderCounter />} />
+
+
         <Route path="*" element={<NotFound />} />
 
       </Routes>
+</ThemeContext.Provider>
     </>
   );
 }
