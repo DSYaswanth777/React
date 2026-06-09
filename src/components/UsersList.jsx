@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ThemeContext from "../Context/ThemeContext";
+import { CiAirportSign1 } from "react-icons/ci";
+import { CiCircleCheck } from "react-icons/ci";
 
 function UsersList() {
   const [users, setUsers] = useState([]);
@@ -16,7 +18,10 @@ function UsersList() {
   
   return <>
   <ul className="d-flex flex-column">
-    {users.map(user => <Link to={`users/${user.id}`} key={user.id} className="fs-3"> {user.name} </Link>)}
+  <CiAirportSign1 size={100} />
+
+  {users.map(user => <Link to={`users/${user.id}`} key={user.id} className="fs-3"> <CiCircleCheck />
+    {user.name} </Link>)}
   </ul>
   {/* <h2>Life cycle of react component</h2>
 Mount - the component is created and inserted into the DOM for the first time. This where you fetch the intial data, start timers, set up sub
