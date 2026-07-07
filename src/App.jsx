@@ -18,6 +18,7 @@ import NotFound from "./components/NotFound";
 import SerarchBox from "./components/SerarchBox";
 import RenderCounter from "./components/RenderCounter";
 import ThemeContext from "./Context/ThemeContext";
+import FirstComponent from "./components/FirstComponent";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,6 +26,9 @@ const [theme,setTheme] = useState('light')
 
   return (
     <>
+
+
+    <FirstComponent/>
       {/* <CustomerForm/> */}
       {/* <Toogle/>
 // <CustomerForm/> */}
@@ -40,14 +44,18 @@ const [theme,setTheme] = useState('light')
 
        <h1>Naming Convention</h1>
 
-
+this for variables naming inside the component
 Camel Case: firstMember
+
+for component file name
 Pascal Case: FirstMember
 Capitalization: Firstmember
 
+
+this for constants
 Upper Case: FIRSTMEMBER
 
-
+folder name
 Lower Case firstmember
 
         </div>
@@ -167,7 +175,7 @@ Lower Case firstmember
       <ScoreCard /> */}
 
       {/* <Hooks/> */}
-<ThemeContext.Provider value={theme} >
+{/* <ThemeContext.Provider value={theme} >
 
 
       <Nvabar />
@@ -183,7 +191,7 @@ Lower Case firstmember
         <Route path="*" element={<NotFound />} />
 
       </Routes>
-</ThemeContext.Provider>
+</ThemeContext.Provider> */}
     </>
   );
 }
